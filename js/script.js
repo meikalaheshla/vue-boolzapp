@@ -33,29 +33,30 @@ Cerchiamo di rispettare tutti i principi e le best practices viste finora (nomi 
 console.log(Vue, 'hello vue')
 
 const root = new Vue({
-    name: boolzapp,
+    name: 'boolzapp',
     el: '#root',
-    data: user: {
-    name: 'Nome Utente',
-    avatar: '_io'
-},
-    contacts: [
-    {
-        name: 'Michele',
-        avatar: '_1',
-    },
-    {
-        name: 'Fabio',
-        avatar: '_2',
-    },
-    {
-        name: 'Samuele',
-        avatar: '_3',
-    },
-    {
-        name: 'Luisa',
-        avatar: '_4',
-    },
-],
-
+    data: {
+        user: {
+            name: 'Nome Utente',
+            avatar: '_io'
+        },
+        contacts: [
+            {
+                name: 'Michele',
+                avatar: '_1',
+            },
+            {
+                name: 'Fabio',
+                avatar: '_2',
+            },
+            {
+                name: 'Samuele',
+                avatar: '_3',
+            },
+            {
+                name: 'Luisa',
+                avatar: '_4',
+            },
+        ],
+    }
 })

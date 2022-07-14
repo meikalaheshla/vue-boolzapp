@@ -1,31 +1,92 @@
 /* GENERICS */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 body {
     height: 100vh;
-    padding: 50px;
-    background-image: linear-gradient(var(--background-color-top) 150px,
-            var(--background-color-top),
-            var(--background-color-bottom)100px);
+    padding: 40px;
+    background-image: linear-gradient(var(--bg-color-top-body) 150px, var(--bg-color-bottom-body)100px);
+    font-family: sans-serif;
+}
+
+img {
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+button {
+    border: none;
+    color: var(--btn-icons-color);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* BUTTON HOVER EFFECT */
+button:hover {
+    color: var(--bg-color-top-body);
+    background-color: var(--bg-color-top-bars);
 }
 
 /* UTILITY */
 
 :root {
-    --background-color-top: #009688;
-    --background-color-bottom: #dbdbd2;
+    --bg-color-top-body: #009688;
+    --bg-color-bottom-body: #dbdbd2;
+    --bg-color-top-bars: #eaeaea;
+    --btn-icons-color: #b1b1b1;
+    --bg-notification-banner: #8edafc;
+    --notification-avtivator-color: #8edafc;
+    --contact-schbox-bg: #fafafa;
 }
 
+.profile-bar {
+    display: flex;
+    align-items: center;
+}
+
+.name-label {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+
+.container {
+    width: 1600px;
+    margin: auto;
+}
 
 /* MAIN  */
 
 /* INTERA FINESTRA DI NAVIGAZIONE */
 
 #app-display {
+    display: flex;
     background-color: white;
     height: 90vh;
 
 
 }
+
+.top-bar {
+    background-color: var(--bg-color-top-bars);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 10vh;
+
+}
+
+
+.top-bar button {
+    margin-left: 15px;
+}
+
 
 
 /* LATO SINISTRO NAVIGAZIONE CON CONTATTI  */
@@ -33,4 +94,131 @@ body {
 #left-display {
     height: 100%;
     width: 40%;
+}
+
+#utility-display #user-info {
+    height: 100%;
+}
+
+
+
+
+
+/* NOTIFICATION BANNER */
+#notification-banner {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    background-color: var(--bg-notification-banner)
+}
+
+#notification-icon-box {
+    color: var(--bg-notification-banner);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    width: 80px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#notification-activator {
+    color: grey;
+    display: block;
+}
+
+
+/* BARRA DI RICERCA CONTATTI */
+#contact-search-box {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    padding: 5px;
+    background-color: var(--contact-schbox-bg);
+}
+
+#contact-search-bar {
+    font-size: 20px;
+    padding-left: 20px;
+    font-family: Arial, FontAwesome;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+
+}
+
+
+/* CHAT-LIST SECTION */
+
+
+#chat-list {
+    height: 65vh;
+
+    list-style-type: none;
+    overflow-y: scroll
+}
+
+#chat-list .chat-item {
+    padding: 10px;
+    height: 8vh;
+    border-bottom: 1px solid lightgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* LATO DESTRO  CURRENT CHAT  */
+
+#right-display {
+    /* background-image: url(../img/mine.jpg); */
+    border-left: 1px solid grey;
+    height: 100%;
+    width: 60%;
+
+}
+
+#current-chat-contact-info {
+    height: 100%;
+}
+
+#chat-displayer {
+    height: 75vh;
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+
+#message-inputs {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    padding: 5px;
+
+    background-color: var(--bg-color-top-bars);
+
+}
+
+#message-inputs .message-input-button-box {
+    text-align: center;
+    width: 50px;
+}
+
+
+#message-inputs #message-text-input {
+
+    font-size: 20px;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+
 }
