@@ -1,0 +1,36 @@
+/* GENERICS */
+
+body {
+    height: 100vh;
+    padding: 50px;
+    background-image: linear-gradient(var(--background-color-top) 150px,
+            var(--background-color-top),
+            var(--background-color-bottom)100px);
+}
+
+/* UTILITY */
+
+:root {
+    --background-color-top: #009688;
+    --background-color-bottom: #dbdbd2;
+}
+
+
+/* MAIN  */
+
+/* INTERA FINESTRA DI NAVIGAZIONE */
+
+#app-display {
+    background-color: white;
+    height: 90vh;
+
+
+}
+
+
+/* LATO SINISTRO NAVIGAZIONE CON CONTATTI  */
+
+#left-display {
+    height: 100%;
+    width: 40%;
+}
