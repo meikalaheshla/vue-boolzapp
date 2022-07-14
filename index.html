@@ -60,7 +60,7 @@
                     </div>
 
                     <ul id="chat-list">
-                        <li v-for="contact in contacts" class="chat-item profile-bar">
+                        <li @click="selectContact(i)" v-for="(contact, i) in contacts" class="chat-item profile-bar">
                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             <span class="name-label">{{contact.name}}</span>
                         </li>
@@ -73,8 +73,8 @@
                 <div id="right-display">
                     <div class="top-bar">
                         <div id="current-chat-contact-info" class="profile-bar ">
-                            <img src="img/avatar_1.jpg" alt="avatar 1s">
-                            <span class="name-label">Nome Contatto</span>
+                            <img :src="`img/avatar${this.contacts[currentIndex].avatar}.jpg`" alt="avatar 1s">
+                            <span class="name-label">{{this.contacts[currentIndex].name}}</span>
                         </div>
                         <div id="current-chat-utility-buttons">
                             <button><i class="fa-solid fa-circle-notch"></i></button>

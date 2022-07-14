@@ -36,6 +36,7 @@ const root = new Vue({
     name: 'boolzapp',
     el: '#root',
     data: {
+        currentIndex: 0,
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -58,5 +59,10 @@ const root = new Vue({
                 avatar: '_4',
             },
         ],
+    }, methods: {
+        selectContact(i) {
+            this.currentIndex = i
+        }
     }
+
 })
