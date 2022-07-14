@@ -32,8 +32,8 @@
 
                         <div class="top-bar">
                             <div id="user-info" class="profile-bar ">
-                                <img src="img/avatar_1.jpg" alt="avatar 1s">
-                                <span class="name-label">Nome Utente</span>
+                                <img :src="`img/avatar${user.avatar}.jpg`" :alt="user.name">
+                                <span class="name-label">{{user.name}}</span>
                             </div>
                             <div id="utility-buttons">
                                 <button><i class="fa-solid fa-circle-notch"></i></button>
@@ -60,9 +60,9 @@
                     </div>
 
                     <ul id="chat-list">
-                        <li class="chat-item profile-bar">
-                            <img src="img/avatar_2.jpg" alt="avatar2">
-                            <span class="name-label">Nome Contatto</span>
+                        <li v-for="contact in contacts" class="chat-item profile-bar">
+                            <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
+                            <span class="name-label">{{contact.name}}</span>
                         </li>
 
 
@@ -84,8 +84,28 @@
 
                     </div>
                     <div id="chat-displayer">
-                        <div class="message-bubble contact-bubble"></div>
-                        <div class="message-bubble user-bubble"></div>
+                        <div class="contact-message-layer">
+
+                            <div class="message-bubble contact-bubble">
+                                <span>messaggio contatto</span>
+
+                                <div class="message-date">
+
+                                    <span>oggi</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-message-layer">
+
+                            <div class="message-bubble user-bubble">
+                                <span>Messaggio Utente</span><br>
+                                <div class="message-date">
+
+                                    <span>oggi</span>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                     <div id="message-inputs">
                         <div class="message-input-button-box">

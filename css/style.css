@@ -40,6 +40,9 @@ button:hover {
     --bg-notification-banner: #8edafc;
     --notification-avtivator-color: #8edafc;
     --contact-schbox-bg: #fafafa;
+    --user-message-bubble-color: #d5f9ba;
+    --contact-message-bubble-color: white;
+    --message-date-color: grey;
 }
 
 .profile-bar {
@@ -106,6 +109,7 @@ button:hover {
 
 /* NOTIFICATION BANNER */
 #notification-banner {
+    padding: 20px;
     display: flex;
     align-items: center;
     height: 10vh;
@@ -118,10 +122,11 @@ button:hover {
     justify-content: center;
     align-items: center;
     height: 8vh;
-    width: 80px;
+    width: 8vh;
     background-color: white;
     border-radius: 50%;
     margin-right: 10px;
+
 }
 
 #notification-activator {
@@ -164,6 +169,7 @@ button:hover {
     padding: 10px;
     height: 8vh;
     border-bottom: 1px solid lightgrey;
+    cursor: pointer;
 }
 
 
@@ -178,25 +184,70 @@ button:hover {
 
 
 /* LATO DESTRO  CURRENT CHAT  */
-
 #right-display {
-    /* background-image: url(../img/mine.jpg); */
     border-left: 1px solid grey;
     height: 100%;
     width: 60%;
 
 }
 
+/* BARRA SUPERIORE INFO CONTATTO E BOTTONI */
+
+
 #current-chat-contact-info {
     height: 100%;
 }
+
+/* DISPLAY DELLA CHAT CORRENTE */
 
 #chat-displayer {
     height: 75vh;
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
+    padding: 30px;
 }
 
+
+/* ACTUAL CHAT MESSAGES */
+
+
+#chat-displayer .contact-message-layer {
+    display: flex;
+
+}
+
+#chat-displayer .user-message-layer {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#chat-displayer .message-bubble {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+
+}
+
+#chat-displayer .user-bubble {
+    align-self: flex-end;
+    background-color: var(--user-message-bubble-color);
+
+}
+
+#chat-displayer .contact-bubble {
+    align-self: flex-start;
+    background-color: var(--contact-message-bubble-color);
+}
+
+#chat-displayer .message-date {
+    color: var(--message-date-color);
+    font-size: 10px;
+    text-align: end;
+    color: ;
+}
+
+
+/* BARRA INFERIORE DELL'INPUT MESSAGGI */
 
 #message-inputs {
     display: flex;
