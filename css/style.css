@@ -71,6 +71,7 @@ button:hover {
     display: flex;
     background-color: white;
     height: 90vh;
+    box-shadow: 5px 5px 20px;
 
 
 }
@@ -225,17 +226,18 @@ button:hover {
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 30px;
+    box-shadow: 1px 1px 2px;
 
 }
 
 #chat-displayer .user-bubble {
-    align-self: flex-end;
+
     background-color: var(--user-message-bubble-color);
 
 }
 
 #chat-displayer .contact-bubble {
-    align-self: flex-start;
+
     background-color: var(--contact-message-bubble-color);
 }
 
