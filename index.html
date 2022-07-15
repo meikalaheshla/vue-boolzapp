@@ -74,7 +74,7 @@
                     <div class="top-bar">
                         <div id="current-chat-contact-info" class="profile-bar ">
                             <img :src="`img/avatar${this.contacts[currentIndex].avatar}.jpg`" alt="avatar 1s">
-                            <span class="name-label">{{this.contacts[currentIndex].name}}</span>
+                            <span class="name-label">{{contacts[currentIndex].name}}</span>
                         </div>
                         <div id="current-chat-utility-buttons">
                             <button><i class="fa-solid fa-circle-notch"></i></button>
@@ -84,24 +84,27 @@
 
                     </div>
                     <div id="chat-displayer">
-                        <div class="contact-message-layer">
+                        <div v-for="message in actualContactMessages" id="message">
 
-                            <div class="message-bubble contact-bubble">
-                                <span>messaggio contatto</span>
+                            <div v-if="message.status === 'sent'" class=" user-message-layer">
 
-                                <div class="message-date">
+                                <div class="message-bubble user-bubble">
+                                    <span>{{message.text}}</span><br>
+                                    <div class="message-date">
 
-                                    <span>oggi</span>
+                                        <span>{{message.date}}</span>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
-                        <div class="user-message-layer">
+                            <div v-else class="contact-message-layer">
+                                <div class="message-bubble contact-bubble">
+                                    <span>{{message.text}}</span>
 
-                            <div class="message-bubble user-bubble">
-                                <span>Messaggio Utente</span><br>
-                                <div class="message-date">
+                                    <div class="message-date">
 
-                                    <span>oggi</span>
+                                        <span>{{message.date}}</span>
+                                    </div>
                                 </div>
 
                             </div>

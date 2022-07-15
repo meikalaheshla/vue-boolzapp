@@ -240,6 +240,7 @@ button:hover {
 }
 
 #chat-displayer .message-date {
+    margin-top: 10px;
     color: var(--message-date-color);
     font-size: 10px;
     text-align: end;
