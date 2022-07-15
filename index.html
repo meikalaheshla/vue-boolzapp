@@ -115,7 +115,7 @@
 
                             <button id="emoji-button"><i class="fa-regular fa-face-flushed"></i></button>
                         </div>
-                        <input type="text" id="message-text-input">
+                        <input @keyup.enter="sendMessage" v-model="newMessage.text" type="text" id="message-text-input">
                         <div class="message-input-button-box">
 
                             <button id="microphone-input-button"><i class="fa-solid fa-microphone"></i></button>

@@ -37,6 +37,16 @@ const root = new Vue({
     el: '#root',
     data: {
         currentIndex: 0,
+        newMessage: {
+            date: '',
+            text: '',
+            status: 'sent'
+        },
+        botMessage: {
+            date: '',
+            text: 'ok',
+            status: 'recived'
+        },
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -131,6 +141,29 @@ const root = new Vue({
     }, methods: {
         selectContact(i) {
             this.currentIndex = i
+        }, sendBotMessage() {
+
+
+            this.actualContactMessages.push(this.botMessage);
+
+
+        },
+        sendMessage() {
+            if (this.newMessage.text) {
+
+                this.actualContactMessages.push(this.newMessage);
+                this.newMessage = {
+                    date: '',
+                    text: '',
+                    status: 'sent'
+                }
+                setTimeout(this.sendBotMessage, 1000)
+
+            }
+            console.log(this.actualContactMessages)
+
+
+
         }
     }
 
