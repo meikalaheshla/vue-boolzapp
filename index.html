@@ -63,13 +63,14 @@
                         </div>
                         <div id="contact-search-box">
 
-                            <input id="contact-search-bar" type="text"
+                            <input @keyup="" v-model="search" id="contact-search-bar" type="text"
                                 placeholder="&#xF002;     Cerca o inizia una nuova chat">
                         </div>
                     </div>
 
                     <ul id="chat-list">
-                        <li @click="selectContact(i)" v-for="(contact, i) in contacts" class="chat-item profile-bar">
+                        <li @click="selectContact(i)" v-for="(contact, i) in contacts " v-show="searchContact(contact)"
+                            class="chat-item profile-bar">
                             <img :src="`img/avatar${contact.avatar}.jpg`" :alt="contact.name">
                             <span class="name-label">{{contact.name}}</span>
                         </li>

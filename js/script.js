@@ -40,6 +40,7 @@ const root = new Vue({
     data: {
         currentIndex: 0,
         newMessageText: '',
+        search: '',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -164,7 +165,12 @@ const root = new Vue({
         autoreplay() {
             setTimeout(() => { this.addMessage('ok', 'received') }, 1000);
 
-        }
+        }, searchContact(contact) {
+            if (this.search == "") {
+                return true;
+            }
+            return contact.name.toLowerCase().startsWith(this.search.toLowerCase());
+        },
     }
 
 })
