@@ -173,17 +173,6 @@ button:hover {
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /* LATO DESTRO  CURRENT CHAT  */
 #right-display {
     border-left: 1px solid grey;
@@ -212,15 +201,35 @@ button:hover {
 /* ACTUAL CHAT MESSAGES */
 
 
-#chat-displayer .contact-message-layer {
+#chat-displayer .message-layer {
     display: flex;
 
 }
 
-#chat-displayer .user-message-layer {
-    display: flex;
-    flex-direction: row-reverse;
+#chat-displayer .message-layer.sent {
+
+    justify-content: flex-end;
+
 }
+
+#chat-displayer .message-layer.received {
+
+    justify-content: flex-start;
+
+}
+
+
+#chat-displayer .message-layer.sent .message-bubble {
+
+    background-color: var(--user-message-bubble-color);
+}
+
+#chat-displayer .message-layer.received .message-bubble {
+
+    background-color: var(--contact-message-bubble-color);
+}
+
+
 
 #chat-displayer .message-bubble {
     border-radius: 10px;
@@ -237,17 +246,6 @@ button:hover {
     display: inline-block;
     word-break: break-all;
 
-}
-
-#chat-displayer .user-bubble {
-
-    background-color: var(--user-message-bubble-color);
-
-}
-
-#chat-displayer .contact-bubble {
-
-    background-color: var(--contact-message-bubble-color);
 }
 
 #chat-displayer .message-date {

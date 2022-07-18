@@ -94,20 +94,20 @@
 
                     </div>
                     <div id="chat-displayer">
-                        <div v-for="message in actualContactMessages" id="message">
+                        <div v-for="message in actualContactMessages " class="message-layer" :class=" message.status">
 
-                            <div v-if="message.status === 'sent'" class=" user-message-layer">
 
-                                <div class="message-bubble user-bubble">
-                                    <span>{{message.text}}</span>
-                                    <div class="message-date">
 
-                                        <span>{{message.date}}</span>
-                                    </div>
+                            <div class="message-bubble">
+                                <span>{{message.text}}</span>
+                                <div class="message-date">
 
+                                    <span>{{message.date}}</span>
                                 </div>
+
                             </div>
-                            <div v-else class="contact-message-layer">
+
+                            <!-- <div v-else class="contact-message-layer">
                                 <div class="message-bubble contact-bubble">
                                     <span>{{message.text}}</span>
 
@@ -117,7 +117,7 @@
                                     </div>
                                 </div>
 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div id="message-inputs">
