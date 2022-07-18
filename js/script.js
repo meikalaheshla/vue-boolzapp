@@ -162,7 +162,7 @@ const root = new Vue({
             console.log(this.actualContactMessages)
         },
         autoreplay() {
-            setTimeout(this.addMessage('ok', 'received'), 3000)
+            setTimeout(() => { this.addMessage('ok', 'received') }, 1000);
 
         }
     }
