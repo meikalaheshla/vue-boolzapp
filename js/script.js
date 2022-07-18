@@ -31,22 +31,15 @@ Cerchiamo di rispettare tutti i principi e le best practices viste finora (nomi 
 
 
 console.log(Vue, 'hello vue')
+dayjs.extend(dayjs_plugin_customParseFormat)
+// dayjs.extend(dayjs_plugin_relativeTime)
 
 const root = new Vue({
     name: 'boolzapp',
     el: '#root',
     data: {
         currentIndex: 0,
-        newMessage: {
-            date: '',
-            text: '',
-            status: 'sent'
-        },
-        botMessage: {
-            date: '',
-            text: 'ok',
-            status: 'recived'
-        },
+        newMessageText: '',
         user: {
             name: 'Nome Utente',
             avatar: '_io'
@@ -147,22 +140,29 @@ const root = new Vue({
             this.actualContactMessages.push(this.botMessage);
 
 
+        }, addMessage(text, status) {
+
+            const newMessage = {
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                text: text,
+                status: status
+            }
+            this.actualContactMessages.push(newMessage);
+
+
         },
         sendMessage() {
-            if (this.newMessage.text) {
+            if (!this.newMessageText) return
+            this.addMessage(this.newMessageText, 'sent');
 
-                this.actualContactMessages.push(this.newMessage);
-                this.newMessage = {
-                    date: '',
-                    text: '',
-                    status: 'sent'
-                }
-                setTimeout(this.sendBotMessage, 1000)
+            this.newMessageText = '';
 
-            }
+            this.autoreplay();
+
             console.log(this.actualContactMessages)
-
-
+        },
+        autoreplay() {
+            setTimeout(this.addMessage('ok', 'received'), 3000)
 
         }
     }
